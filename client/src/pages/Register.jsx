@@ -20,7 +20,8 @@ const Register = () => {
             });
             navigate('/');
         } catch (err) {
-            setError(err.response?.data?.message || 'Registration failed');
+            console.error("Registration Error:", err);
+            setError(err.response?.data?.message || 'Server Error. Check console logs.');
         }
     };
 
