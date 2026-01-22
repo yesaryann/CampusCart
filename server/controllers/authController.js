@@ -29,7 +29,7 @@ exports.register = async (req, res) => {
 
         res.status(201).json({ token, user: { id: newUser._id, username, email, fullName } });
     } catch (error) {
-        res.status(500).json({ message: 'Server Error', error: error.message });
+        res.status(500).json({ message: error.message }); // Send actual error for debugging
     }
 };
 
@@ -49,6 +49,6 @@ exports.login = async (req, res) => {
 
         res.status(200).json({ token, user: { id: user._id, username: user.username, email, fullName: user.fullName } });
     } catch (error) {
-        res.status(500).json({ message: 'Server Error', error: error.message });
+        res.status(500).json({ message: error.message }); // Send actual error for debugging
     }
 };
