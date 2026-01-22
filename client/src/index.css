@@ -1,7 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #4F46E5;
+  --color-secondary: #9333EA;
+  --color-accent: #F59E0B;
+}
 
 body {
   @apply bg-gray-50 text-gray-900;
+}
+
+@layer components {
+  .auth-input {
+    @apply mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all;
+  }
 }
